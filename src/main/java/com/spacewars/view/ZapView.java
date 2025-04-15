@@ -22,7 +22,7 @@ public class ZapView extends Group {
         });
 
         Stop[] stops= new Stop[] {
-                new Stop(.15, startColor),
+                new Stop(.075, startColor),
                 new Stop(1, endColor)
         };
 
