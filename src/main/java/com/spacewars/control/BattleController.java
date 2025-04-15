@@ -96,8 +96,8 @@ public class BattleController {
 
         /*
         so we can look up hash-code of model object to view object and the other way around
-        why not use model object?
-        it may be altered (or destroyed) on the worker thread by the time the animation is displayed
+        why not use model object? hash-code should stay constant for your objects
+        objects may be altered (or destroyed) on the worker thread by the time the animation is displayed
         */
         shipViewLinker.put("" + ship.hashCode(), shipView);
 
@@ -127,7 +127,6 @@ public class BattleController {
 
     private void fire(Ship attacker, Ship defender, DamageType damageType,
                             int shieldDamage, int armorDamage, int hullDamage, double variation, boolean crit) {
-        //TODO
         ShipView attackerView = shipViewLinker.getView("" + attacker.hashCode());
         ShipView defenderView = shipViewLinker.getView("" + defender.hashCode());
 
@@ -165,7 +164,7 @@ public class BattleController {
         fade.setNode(zapView);
         fade.setFromValue(1);
         fade.setToValue(0.0);
-        fade.setDuration(Duration.millis(1000));
+        fade.setDuration(Duration.millis(1500));
 
         fade.setOnFinished( e -> {
             root.getChildren().remove(zapView);
