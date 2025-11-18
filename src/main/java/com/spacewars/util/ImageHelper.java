@@ -27,4 +27,8 @@ public class ImageHelper {
 
         return imageView;
     }
+
+    public static String getShipImageFilepath(String shipName) {
+        return shipName + ".png";
+    }
 }

@@ -3,6 +3,13 @@ package com.spacewars.control;
 import java.util.HashMap;
 import java.util.Set;
 
+/**
+ * Purpose: to be able to keep track of what back-end objects are related to what graphics objects
+ *
+ * @param <M> model object to link
+ * @param <V> view object to link
+ */
+
 public class MVCLinkMap<M, V> {
     private HashMap<M, V> modelToView = new HashMap<>();
     private HashMap<V, M> viewToModel = new HashMap<>();

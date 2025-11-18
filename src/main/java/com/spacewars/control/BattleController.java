@@ -89,7 +89,7 @@ public class BattleController {
         Armor armor = ship.getArmor();
         int armorValue = (armor == null ? 0 : armor.getMaxIntegrity());
 
-        ShipView shipView = new ShipView(root, ship.getImageFilepath(), x, y, shipColor,
+        ShipView shipView = new ShipView(root, ImageHelper.getShipImageFilepath(ship.getName()), x, y, shipColor,
                 shieldValue, armorValue, ship.getIntegrityMax());
 
         root.getChildren().add(shipView);
