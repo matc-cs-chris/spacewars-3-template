@@ -1,6 +1,6 @@
 package com.spacewars.control;
 
-import com.spacewars.Main;
+import com.spacewars.SpacewarsUIApplication;
 import com.spacewars.model.Team;
 import com.spacewars.model.structure.Ship;
 import com.spacewars.model.structure.defenses.Armor;
@@ -26,14 +26,14 @@ public class BattleController {
     private Scene scene;
     private Group root;
     private StarsView starsView;
-    private Main application;
+    private SpacewarsUIApplication application;
     MVCLinkMap<String, TeamView> teamViewLinker = new MVCLinkMap<>();
     MVCLinkMap<String,ShipView> shipViewLinker = new MVCLinkMap<>();
     Timeline timeline = new Timeline();
     AnimationTimer timer;
     ConcurrentLinkedQueue<Runnable> animationQueue = new ConcurrentLinkedQueue<>();
 
-    public BattleController(Main application, Scene scene, Group root) {
+    public BattleController(SpacewarsUIApplication application, Scene scene, Group root) {
         this.scene = scene;
         this.application = application;
         this.root = root;
